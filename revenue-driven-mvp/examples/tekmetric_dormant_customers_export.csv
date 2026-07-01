@@ -1,0 +1,6 @@
+Customer ID,First Name,Last Name,Phone,Email,Last Visit Date,Year,Make,Model,VIN,Mileage,RO Number,Type,RO Date,Job Description,Declined Amount,Estimate Total,Status
+CUST-2001,Karen,Sullivan,+15551230201,karen.sullivan@example.com,2025-11-02,2015,Toyota,Camry,4T1BF1FK5FU123456,89200,RO-19870,Repair Order,2025-11-02,Full synthetic oil change and multi-point inspection,0,95.00,Completed
+CUST-2002,Brian,Ortega,+15551230202,brian.ortega@example.com,2025-08-14,2013,Honda,Accord,1HGCR2F3XDA123456,131400,RO-19602,Repair Order,2025-08-14,Battery replacement,0,175.00,Completed
+CUST-2003,Nicole,Reyes,+15551230203,nicole.reyes@example.com,2025-05-30,2017,Ford,Escape,1FMCU9GD3HUA12345,74800,RO-19311,Repair Order,2025-05-30,Tire rotation and 30k service,0,220.00,Completed
+CUST-2004,Thomas,Ibrahim,+15551230204,thomas.ibrahim@example.com,2025-01-19,2011,Chevrolet,Malibu,1G1ZC5E17BF123456,164500,RO-18902,Repair Order,2025-01-19,Alignment and wiper blades,0,140.00,Completed
+CUST-2005,Diane,Foster,+15551230205,diane.foster@example.com,2024-10-05,2019,Subaru,Forester,JF2SJADC3KH123456,52300,RO-18477,Repair Order,2024-10-05,Cabin air filter replacement,0,60.00,Completed

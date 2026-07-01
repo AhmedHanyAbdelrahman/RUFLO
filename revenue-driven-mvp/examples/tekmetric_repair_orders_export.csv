@@ -1,0 +1,11 @@
+Customer ID,First Name,Last Name,Phone,Email,Last Visit Date,Year,Make,Model,VIN,Mileage,RO Number,Type,RO Date,Job Description,Declined Amount,Estimate Total,Status
+CUST-1001,Maria,Gonzalez,+15551230101,maria.gonzalez@example.com,2026-06-18,2016,Honda,Civic,1HGCM82633A004352,78500,RO-20481,Repair Order,2026-06-18,Front brake pads and rotors replacement,612.50,0,Declined
+CUST-1002,James,Whitfield,+15551230102,james.whitfield@example.com,2026-05-02,2014,Ford,F-150,1FTFW1ET4EFA12345,112300,RO-20502,Repair Order,2026-05-02,Serpentine belt and tensioner replacement,284.00,0,Declined
+CUST-1003,Angela,Park,+15551230103,angela.park@example.com,2026-04-11,2019,Toyota,RAV4,2T3P1RFV8KW012233,41200,RO-20517,Estimate,2026-04-11,Timing chain inspection and check engine diagnosis,0,890.00,Estimate Pending
+CUST-1004,David,Nguyen,+15551230104,david.nguyen@example.com,2026-03-22,2012,Chevrolet,Silverado,1GCEC14X72Z123456,158900,RO-20530,Repair Order,2026-03-22,Steering rack and tie rod ends,935.00,0,Declined
+CUST-1005,Sarah,Blackwell,+15551230105,sarah.blackwell@example.com,2026-06-25,2018,Subaru,Outback,4S4BSANC0J3123456,63400,RO-20544,Repair Order,2026-06-25,AC compressor and refrigerant recharge,410.00,0,Declined
+CUST-1006,Robert,Ellison,+15551230106,robert.ellison@example.com,2026-02-14,2015,Jeep,Grand Cherokee,1C4RJFAG3FC123456,97600,RO-20560,Estimate,2026-02-14,Suspension ball joints and control arm bushings,0,1180.00,Estimate Pending
+CUST-1007,Linda,Fitzgerald,+15551230107,linda.fitzgerald@example.com,2026-06-30,2020,Mazda,CX-5,JM3KFBCM5L0123456,28900,RO-20575,Repair Order,2026-06-30,Cabin air filter and wiper blades,68.00,0,Declined
+CUST-1008,Michael,Torres,+15551230108,michael.torres@example.com,2026-05-19,2013,Nissan,Altima,1N4AL3AP7DC123456,142100,RO-20588,Repair Order,2026-05-19,ABS sensor and wheel bearing replacement,745.00,0,Declined
+CUST-1009,Patricia,Vaughn,+15551230109,patricia.vaughn@example.com,2026-04-28,2017,Kia,Sorento,5XYPGDA31HG123456,68300,RO-20601,Estimate,2026-04-28,Transmission fluid service and cooling system flush,0,520.00,Estimate Pending
+CUST-1010,Christopher,Hale,+15551230110,christopher.hale@example.com,2026-06-10,2021,Hyundai,Tucson,KM8J3CA46MU123456,19700,RO-20614,Repair Order,2026-06-10,Tire rotation and alignment,145.00,0,Declined
