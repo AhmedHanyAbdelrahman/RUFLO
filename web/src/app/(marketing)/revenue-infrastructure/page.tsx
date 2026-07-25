@@ -3,8 +3,6 @@ import { pageMetadata } from "@/lib/seo/metadata";
 import { PageHero } from "@/components/heroes/PageHero";
 import { SectionHeading } from "@/components/content/SectionHeading";
 import { CapabilityCard } from "@/components/content/CapabilityCard";
-import { Icon, type IconName } from "@/components/ui/Icon";
-import { Button } from "@/components/ui/Button";
 import { PrimaryCTASection } from "@/components/conversion/PrimaryCTASection";
 
 export const metadata: Metadata = pageMetadata({
@@ -37,16 +35,16 @@ const FLOW = [
   "Optimization",
 ];
 
-const COMPONENTS: { title: string; description: string; icon: IconName }[] = [
-  { title: "strategy", description: "Market, ICP, objective, and qualification standard.", icon: "target" },
-  { title: "data", description: "Sourced, enriched, cleaned, and segmented.", icon: "database" },
-  { title: "outreach", description: "Approved calling, response, and reactivation.", icon: "signal" },
-  { title: "qualification", description: "Fit, intent, authority, timeline, next action.", icon: "shield-check" },
-  { title: "crm and routing", description: "Structured notes, source, owner, status.", icon: "route" },
-  { title: "ai and automation", description: "Summaries, classification, and triggers.", icon: "cpu" },
-  { title: "qa and governance", description: "Accuracy, adherence, and standards.", icon: "shield" },
-  { title: "revenue intelligence", description: "Performance and market comparisons.", icon: "bar-chart" },
-  { title: "workforce", description: "Recruited, trained, deployed, and managed.", icon: "users" },
+const COMPONENTS = [
+  { title: "strategy", description: "Market, ICP, objective, and qualification standard." },
+  { title: "data", description: "Sourced, enriched, cleaned, and segmented." },
+  { title: "outreach", description: "Approved calling, response, and reactivation." },
+  { title: "qualification", description: "Fit, intent, authority, timeline, next action." },
+  { title: "crm and routing", description: "Structured notes, source, owner, status." },
+  { title: "ai and automation", description: "Summaries, classification, and triggers." },
+  { title: "qa and governance", description: "Accuracy, adherence, and standards." },
+  { title: "revenue intelligence", description: "Performance and market comparisons." },
+  { title: "workforce", description: "Recruited, trained, deployed, and managed." },
 ];
 
 const COMPOUNDING = ["Data quality", "Script performance", "Qualification accuracy", "Client response", "Routing", "Market selection", "Follow-up", "Reporting"];
@@ -58,7 +56,6 @@ export default function RevenueInfrastructurePage() {
         heading="outbound, built as infrastructure."
         body="Most outbound functions are assembled from labor, software, data, and disconnected workflows. Omnikom combines them into one managed operating layer."
         primaryCta={{ label: "Book an Infrastructure Consultation", href: "/consultation" }}
-        accentIcons={["target", "database", "signal", "shield-check", "route", "cpu", "shield", "bar-chart", "users"]}
       />
 
       <section className="border-b border-border bg-ink">
@@ -72,8 +69,7 @@ export default function RevenueInfrastructurePage() {
           </p>
           <ul className="mt-10 grid gap-3 sm:grid-cols-2">
             {FRAGMENTS.map((item) => (
-              <li key={item} className="flex items-center gap-3 rounded-[12px] border border-border bg-ink-card px-5 py-4 text-sm text-gray-300">
-                <Icon name="x" className="h-4 w-4 shrink-0 text-gray-600" />
+              <li key={item} className="rounded-[12px] border border-border bg-ink-card px-5 py-4 text-sm text-gray-300">
                 {item}
               </li>
             ))}
@@ -103,29 +99,15 @@ export default function RevenueInfrastructurePage() {
             the nine layers of the platform.
           </SectionHeading>
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {COMPONENTS.map((c) => (
+            {COMPONENTS.map((c, index) => (
               <CapabilityCard
                 key={c.title}
+                index={String(index + 1).padStart(2, "0")}
                 title={c.title}
                 description={c.description}
-                icon={c.icon}
               />
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="border-b border-border bg-lime">
-        <div className="container-page flex flex-col items-start justify-between gap-6 py-10 text-ink md:flex-row md:items-center">
-          <p className="text-xl font-semibold lowercase md:max-w-xl">
-            see this mapped against your own market and data.
-          </p>
-          <Button
-            label="Book a Revenue Infrastructure Consultation"
-            href="/consultation"
-            style="secondary"
-            className="!border-ink !text-ink shrink-0 hover:!bg-ink hover:!text-lime"
-          />
         </div>
       </section>
 

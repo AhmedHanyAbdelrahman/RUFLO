@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo/metadata";
 import { Button } from "@/components/ui/Button";
-import { Icon, type IconName } from "@/components/ui/Icon";
 import { SectionEyebrow } from "@/components/content/SectionEyebrow";
 import { SectionHeading } from "@/components/content/SectionHeading";
 import { PullQuote } from "@/components/content/PullQuote";
@@ -27,70 +26,70 @@ const HERO_STATS = [
   { value: "1", label: "Accountable system" },
 ];
 
-const CAPABILITIES: { title: string; description: string; icon: IconName }[] = [
-  { title: "market strategy", description: "ICP, objective, and lane economics.", icon: "target" },
-  { title: "data infrastructure", description: "Sourced, enriched, and segmented.", icon: "database" },
-  { title: "outreach operations", description: "Calling, response, and reactivation.", icon: "signal" },
-  { title: "qualification", description: "Fit, intent, authority, timeline.", icon: "shield-check" },
-  { title: "crm and routing", description: "Delivered with source and owner.", icon: "route" },
-  { title: "ai and automation", description: "Summaries, alerts, and triggers.", icon: "cpu" },
-  { title: "quality and governance", description: "Accuracy and operating standards.", icon: "shield" },
-  { title: "revenue intelligence", description: "Performance and market comparisons.", icon: "bar-chart" },
+const CAPABILITIES = [
+  { title: "market strategy", description: "ICP, objective, and lane economics." },
+  { title: "data infrastructure", description: "Sourced, enriched, and segmented." },
+  { title: "outreach operations", description: "Calling, response, and reactivation." },
+  { title: "qualification", description: "Fit, intent, authority, timeline." },
+  { title: "crm and routing", description: "Delivered with source and owner." },
+  { title: "ai and automation", description: "Summaries, alerts, and triggers." },
+  { title: "quality and governance", description: "Accuracy and operating standards." },
+  { title: "revenue intelligence", description: "Performance and market comparisons." },
 ];
 
-const SOLUTIONS: { title: string; description: string; href: string; icon: IconName }[] = [
-  { title: "acquire", description: "New qualified opportunities from target markets.", href: "/solutions/acquire", icon: "target" },
-  { title: "reactivate", description: "Recover value from dormant customers and past leads.", href: "/solutions/reactivate", icon: "refresh" },
-  { title: "qualify and route", description: "Structured opportunities delivered to the right team.", href: "/solutions/qualify-route", icon: "filter" },
-  { title: "speed-to-lead", description: "Respond while commercial intent is still active.", href: "/solutions/speed-to-lead", icon: "zap" },
-  { title: "nurture and recover", description: "Callbacks, no-shows, and future-timeline follow-up.", href: "/solutions/nurture-recovery", icon: "heart" },
-  { title: "operate departments", description: "Complete revenue, support, or back-office functions.", href: "/solutions/managed-departments", icon: "building" },
+const SOLUTIONS = [
+  { title: "acquire", description: "New qualified opportunities from target markets.", href: "/solutions/acquire" },
+  { title: "reactivate", description: "Recover value from dormant customers and past leads.", href: "/solutions/reactivate" },
+  { title: "qualify and route", description: "Structured opportunities delivered to the right team.", href: "/solutions/qualify-route" },
+  { title: "speed-to-lead", description: "Respond while commercial intent is still active.", href: "/solutions/speed-to-lead" },
+  { title: "nurture and recover", description: "Callbacks, no-shows, and future-timeline follow-up.", href: "/solutions/nurture-recovery" },
+  { title: "operate departments", description: "Complete revenue, support, or back-office functions.", href: "/solutions/managed-departments" },
 ];
 
-const REVENUE_LANES: { stage: string; name: string; objective: string; href: string; icon: IconName }[] = [
-  { stage: "stage 1", name: "validate", objective: "Test one market or thesis with controlled infrastructure.", href: "/revenue-lanes/validation", icon: "target" },
-  { stage: "stage 2", name: "grow", objective: "Consistent weekly opportunity flow around a proven offer.", href: "/revenue-lanes/growth", icon: "bar-chart" },
-  { stage: "stage 3", name: "expand", objective: "Add markets, locations, ICPs, and service lines.", href: "/revenue-lanes/expansion", icon: "expand" },
-  { stage: "stage 4", name: "enterprise", objective: "Governed, multi-lane infrastructure across the organization.", href: "/revenue-lanes/enterprise", icon: "building" },
+const REVENUE_LANES = [
+  { stage: "stage 1", name: "validate", objective: "Test one market or thesis with controlled infrastructure.", href: "/revenue-lanes/validation" },
+  { stage: "stage 2", name: "grow", objective: "Consistent weekly opportunity flow around a proven offer.", href: "/revenue-lanes/growth" },
+  { stage: "stage 3", name: "expand", objective: "Add markets, locations, ICPs, and service lines.", href: "/revenue-lanes/expansion" },
+  { stage: "stage 4", name: "enterprise", objective: "Governed, multi-lane infrastructure across the organization.", href: "/revenue-lanes/enterprise" },
 ];
 
-const INDUSTRIES: { name: string; problem: string; href: string; icon: IconName }[] = [
-  { name: "real estate", problem: "Seller acquisition and investor pipelines.", href: "/industries/real-estate", icon: "building" },
-  { name: "home services", problem: "Inspections, estimates, and reactivation.", href: "/industries/roofing-home-services", icon: "layers" },
-  { name: "automotive", problem: "Declined-service recovery and fleet outreach.", href: "/industries/automotive", icon: "zap" },
-  { name: "b2b and saas", problem: "Decision-maker meetings and account outreach.", href: "/industries/b2b-saas", icon: "cpu" },
-  { name: "staffing", problem: "Employer acquisition and job orders.", href: "/industries/staffing", icon: "users" },
-  { name: "healthcare and dental", problem: "Patient reactivation and consultations.", href: "/industries/dental-healthcare", icon: "heart" },
-  { name: "legal", problem: "Consultation and intake, compliance-bound.", href: "/industries/legal", icon: "shield-check" },
-  { name: "financial services", problem: "Policy reviews and managed operations.", href: "/industries/financial-services", icon: "bar-chart" },
-  { name: "education", problem: "Enrollment consultation and reactivation.", href: "/industries/education", icon: "globe" },
-  { name: "commercial services", problem: "Decision-maker meetings and projects.", href: "/industries/commercial-industrial", icon: "route" },
+const INDUSTRIES = [
+  { name: "real estate", problem: "Seller acquisition and investor pipelines.", href: "/industries/real-estate" },
+  { name: "home services", problem: "Inspections, estimates, and reactivation.", href: "/industries/roofing-home-services" },
+  { name: "automotive", problem: "Declined-service recovery and fleet outreach.", href: "/industries/automotive" },
+  { name: "b2b and saas", problem: "Decision-maker meetings and account outreach.", href: "/industries/b2b-saas" },
+  { name: "staffing", problem: "Employer acquisition and job orders.", href: "/industries/staffing" },
+  { name: "healthcare and dental", problem: "Patient reactivation and consultations.", href: "/industries/dental-healthcare" },
+  { name: "legal", problem: "Consultation and intake, compliance-bound.", href: "/industries/legal" },
+  { name: "financial services", problem: "Policy reviews and managed operations.", href: "/industries/financial-services" },
+  { name: "education", problem: "Enrollment consultation and reactivation.", href: "/industries/education" },
+  { name: "commercial services", problem: "Decision-maker meetings and projects.", href: "/industries/commercial-industrial" },
 ];
 
 const PROCESS_STEPS = ["Assess", "Architect", "Build", "Launch", "Calibrate", "Operate", "Expand"];
 
-const TECHNOLOGY_CARDS: { label: string; icon: IconName }[] = [
-  { label: "AI conversation summaries", icon: "cpu" },
-  { label: "Qualification classification", icon: "shield-check" },
-  { label: "CRM workflow automation", icon: "route" },
-  { label: "Opportunity routing", icon: "target" },
-  { label: "QA intelligence", icon: "shield" },
-  { label: "Performance dashboards", icon: "bar-chart" },
-  { label: "Next-action recommendations", icon: "zap" },
-  { label: "Source attribution", icon: "database" },
+const TECHNOLOGY_CARDS = [
+  "AI conversation summaries",
+  "Qualification classification",
+  "CRM workflow automation",
+  "Opportunity routing",
+  "QA intelligence",
+  "Performance dashboards",
+  "Next-action recommendations",
+  "Source attribution",
 ];
 
-const PILLARS: { title: string; description: string; icon: IconName }[] = [
-  { title: "accountable", description: "One operating partner owns the lane end to end.", icon: "shield" },
-  { title: "configurable", description: "Built around your market, ICP, and workflow.", icon: "target" },
-  { title: "scalable", description: "Add markets and business units without rebuilding.", icon: "expand" },
-  { title: "measurable", description: "Every opportunity has source, status, and owner.", icon: "bar-chart" },
+const PILLARS = [
+  { title: "accountable", description: "One operating partner owns the lane end to end." },
+  { title: "configurable", description: "Built around your market, ICP, and workflow." },
+  { title: "scalable", description: "Add markets and business units without rebuilding." },
+  { title: "measurable", description: "Every opportunity has source, status, and owner." },
 ];
 
-const OUTCOME_CARDS: { title: string; description: string; icon: IconName }[] = [
-  { title: "operational clarity", description: "One source of truth, market to handoff.", icon: "layers" },
-  { title: "repeatable execution", description: "A system beyond any single hire or vendor.", icon: "refresh" },
-  { title: "scalable capacity", description: "Expand acquisition without rebuilding the function.", icon: "expand" },
+const OUTCOME_CARDS = [
+  { title: "operational clarity", description: "One source of truth, market to handoff." },
+  { title: "repeatable execution", description: "A system beyond any single hire or vendor." },
+  { title: "scalable capacity", description: "Expand acquisition without rebuilding the function." },
 ];
 
 export default function HomePage() {
@@ -146,7 +145,6 @@ export default function HomePage() {
           </p>
           <div className="mt-12 grid gap-4 md:grid-cols-3">
             <div className="rounded-[16px] border border-blue-bright bg-blue-bright/40 p-6">
-              <Icon name="x" className="mb-4 h-6 w-6 text-white/70" />
               <h3 className="mb-3 text-sm font-semibold uppercase tracking-wide text-white">
                 assembled outbound
               </h3>
@@ -157,7 +155,6 @@ export default function HomePage() {
               </ul>
             </div>
             <div className="rounded-[16px] border border-blue-bright bg-blue-bright/40 p-6">
-              <Icon name="layers" className="mb-4 h-6 w-6 text-white/70" />
               <h3 className="mb-3 text-sm font-semibold uppercase tracking-wide text-white">
                 internal build
               </h3>
@@ -168,7 +165,6 @@ export default function HomePage() {
               </ul>
             </div>
             <div className="rounded-[16px] border border-lime bg-lime p-6 text-ink">
-              <Icon name="check" className="mb-4 h-6 w-6" />
               <h3 className="mb-3 text-sm font-semibold uppercase tracking-wide">
                 omnikom infrastructure
               </h3>
@@ -179,9 +175,8 @@ export default function HomePage() {
               </ul>
             </div>
           </div>
-          <div className="mt-10 flex flex-wrap gap-4">
+          <div className="mt-10">
             <Button label="See How the Infrastructure Works" href="/revenue-infrastructure" style="secondary" className="!border-white !text-white hover:!bg-white hover:!text-ink" />
-            <Button label="Book a Consultation" href="/consultation" style="text" className="!text-white" />
           </div>
         </div>
       </section>
@@ -197,8 +192,13 @@ export default function HomePage() {
             qualification, CRM, AI, workforce, and reporting.
           </p>
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {CAPABILITIES.map((c) => (
-              <CapabilityCard key={c.title} title={c.title} description={c.description} icon={c.icon} />
+            {CAPABILITIES.map((c, index) => (
+              <CapabilityCard
+                key={c.title}
+                index={String(index + 1).padStart(2, "0")}
+                title={c.title}
+                description={c.description}
+              />
             ))}
           </div>
           <div className="mt-14">
@@ -216,7 +216,7 @@ export default function HomePage() {
           </SectionHeading>
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {SOLUTIONS.map((s) => (
-              <CapabilityCard key={s.href} title={s.title} description={s.description} href={s.href} icon={s.icon} />
+              <CapabilityCard key={s.href} title={s.title} description={s.description} href={s.href} />
             ))}
           </div>
         </div>
@@ -269,28 +269,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Mid-page CTA banner */}
-      <section className="border-b border-border bg-lime">
-        <div className="container-page flex flex-col items-start justify-between gap-6 py-10 text-ink md:flex-row md:items-center">
-          <p className="text-xl font-semibold lowercase md:max-w-xl">
-            not sure which lane fits your business? we&rsquo;ll map it in one working session.
-          </p>
-          <Button
-            label="Book a Revenue Infrastructure Consultation"
-            href="/consultation"
-            style="secondary"
-            className="!border-ink !text-ink shrink-0 hover:!bg-ink hover:!text-lime"
-          />
-        </div>
-      </section>
-
       {/* Operating System / process */}
-      <section className="border-b border-border bg-ink">
+      <section className="border-b border-border bg-lime text-ink">
         <div className="container-page py-20 md:py-24">
-          <SectionHeading className="max-w-2xl lowercase">
+          <SectionHeading className="max-w-2xl lowercase text-ink">
             always moving. always in control.
           </SectionHeading>
-          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-gray-300">
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink/80">
             Every engagement starts with your economics, market, and
             compliance boundaries — not a generic campaign.
           </p>
@@ -298,19 +283,24 @@ export default function HomePage() {
             {PROCESS_STEPS.map((step, index) => (
               <li
                 key={step}
-                className="rounded-[14px] border border-border bg-ink-card p-4 text-center transition-colors duration-150 hover:border-lime"
+                className="rounded-[14px] border border-ink/20 bg-ink p-4 text-center text-white"
               >
                 <span className="block text-xs font-semibold text-lime">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <span className="mt-2 block text-sm font-semibold lowercase text-white">
+                <span className="mt-2 block text-sm font-semibold lowercase">
                   {step}
                 </span>
               </li>
             ))}
           </ol>
           <div className="mt-10">
-            <Button label="View the Complete Process" href="/how-it-works" style="secondary" />
+            <Button
+              label="View the Complete Process"
+              href="/how-it-works"
+              style="secondary"
+              className="!border-ink !text-ink hover:!bg-ink hover:!text-lime"
+            />
           </div>
         </div>
       </section>
@@ -328,13 +318,10 @@ export default function HomePage() {
           <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {TECHNOLOGY_CARDS.map((item) => (
               <div
-                key={item.label}
-                className="flex items-center gap-3 rounded-[14px] border border-border bg-ink-card p-5 text-sm font-medium text-white"
+                key={item}
+                className="rounded-[14px] border border-border bg-ink-card p-5 text-sm font-medium text-white"
               >
-                <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-[8px] bg-ink text-lime">
-                  <Icon name={item.icon} className="h-4 w-4" />
-                </span>
-                {item.label}
+                {item}
               </div>
             ))}
           </div>
@@ -372,9 +359,6 @@ export default function HomePage() {
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {PILLARS.map((pillar) => (
               <div key={pillar.title} className="rounded-[16px] border border-blue-bright bg-blue-bright/30 p-6">
-                <span className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-[10px] bg-blue-bright text-lime">
-                  <Icon name={pillar.icon} className="h-5 w-5" />
-                </span>
                 <h3 className="mb-2 text-lg font-semibold lowercase text-white">{pillar.title}</h3>
                 <p className="text-sm leading-relaxed text-gray-100">{pillar.description}</p>
               </div>
@@ -399,9 +383,6 @@ export default function HomePage() {
           <div className="mt-12 grid gap-4 sm:grid-cols-3">
             {OUTCOME_CARDS.map((card) => (
               <div key={card.title} className="rounded-[16px] border border-border bg-ink-card p-6">
-                <span className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-[10px] bg-ink text-lime">
-                  <Icon name={card.icon} className="h-5 w-5" />
-                </span>
                 <h3 className="mb-2 text-lg font-semibold lowercase text-white">{card.title}</h3>
                 <p className="text-sm leading-relaxed text-gray-300">{card.description}</p>
               </div>

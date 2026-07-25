@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Icon, type IconName } from "@/components/ui/Icon";
 
 export interface RevenueLaneCardProps {
   stage: string;
@@ -7,7 +6,6 @@ export interface RevenueLaneCardProps {
   objective: string;
   bestFor?: string[];
   href: string;
-  icon?: IconName;
 }
 
 export function RevenueLaneCard({
@@ -16,27 +14,19 @@ export function RevenueLaneCard({
   objective,
   bestFor,
   href,
-  icon,
 }: RevenueLaneCardProps) {
   return (
     <Link
       href={href}
-      className="group flex h-full flex-col gap-4 rounded-[16px] border border-blue-bright bg-blue p-6 text-white transition-colors duration-[180ms] ease-[var(--ease-standard)] hover:bg-lime hover:text-ink"
+      className="group flex h-full flex-col gap-3 rounded-[16px] border border-blue-bright bg-blue p-6 text-white transition-colors duration-[180ms] ease-[var(--ease-standard)] hover:bg-lime hover:text-ink"
     >
-      <div className="flex items-center justify-between">
-        {icon ? (
-          <span className="inline-flex h-11 w-11 items-center justify-center rounded-[10px] bg-blue-bright text-lime transition-colors duration-150 group-hover:bg-ink">
-            <Icon name={icon} className="h-5 w-5" />
-          </span>
-        ) : null}
-        <span className="text-xs font-semibold uppercase tracking-[0.14em] opacity-70">
-          {stage}
-        </span>
-      </div>
+      <span className="text-xs font-semibold uppercase tracking-[0.14em] opacity-70">
+        {stage}
+      </span>
       <h3 className="text-xl font-semibold lowercase">{name}</h3>
       <p className="text-sm leading-relaxed opacity-90">{objective}</p>
       {bestFor && bestFor.length > 0 ? (
-        <ul className="mt-auto flex flex-col gap-1 text-xs opacity-80">
+        <ul className="mt-auto flex flex-col gap-1 pt-2 text-xs opacity-80">
           {bestFor.map((item) => (
             <li key={item}>— {item}</li>
           ))}

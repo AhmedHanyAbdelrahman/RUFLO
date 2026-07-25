@@ -70,7 +70,6 @@ export default function HowItWorksPage() {
         heading="from commercial objective to operating system."
         body="Omnikom assesses the business, architects the lane, builds the workflow, launches controlled operations, calibrates performance, and expands what works."
         primaryCta={{ label: "Start with an Infrastructure Assessment", href: "/consultation" }}
-        accentIcons={["target", "layers", "cpu", "zap", "refresh", "expand"]}
       />
 
       <section className="bg-ink">
