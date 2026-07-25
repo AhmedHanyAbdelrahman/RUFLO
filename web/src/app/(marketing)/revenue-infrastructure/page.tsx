@@ -3,6 +3,8 @@ import { pageMetadata } from "@/lib/seo/metadata";
 import { PageHero } from "@/components/heroes/PageHero";
 import { SectionHeading } from "@/components/content/SectionHeading";
 import { CapabilityCard } from "@/components/content/CapabilityCard";
+import { Icon, type IconName } from "@/components/ui/Icon";
+import { Button } from "@/components/ui/Button";
 import { PrimaryCTASection } from "@/components/conversion/PrimaryCTASection";
 
 export const metadata: Metadata = pageMetadata({
@@ -35,43 +37,43 @@ const FLOW = [
   "Optimization",
 ];
 
-const COMPONENTS = [
-  { title: "strategy", description: "Define the market, ICP, commercial objective, and qualification standard." },
-  { title: "data", description: "Source, enrich, clean, segment, and maintain the data powering the lane." },
-  { title: "outreach", description: "Operate approved calling, response, reactivation, and follow-up workflows." },
-  { title: "qualification", description: "Capture fit, need, intent, authority, timeline, and the agreed next action." },
-  { title: "crm and routing", description: "Deliver every opportunity with structured notes, source, owner, and status." },
-  { title: "ai and automation", description: "Generate summaries, classifications, alerts, and workflow triggers." },
-  { title: "qa and governance", description: "Monitor accuracy, adherence, attendance, and operating standards." },
-  { title: "revenue intelligence", description: "Measure performance, compare markets, and optimize the lane." },
-  { title: "workforce", description: "Recruit, train, deploy, manage, and support the people behind each lane." },
+const COMPONENTS: { title: string; description: string; icon: IconName }[] = [
+  { title: "strategy", description: "Market, ICP, objective, and qualification standard.", icon: "target" },
+  { title: "data", description: "Sourced, enriched, cleaned, and segmented.", icon: "database" },
+  { title: "outreach", description: "Approved calling, response, and reactivation.", icon: "signal" },
+  { title: "qualification", description: "Fit, intent, authority, timeline, next action.", icon: "shield-check" },
+  { title: "crm and routing", description: "Structured notes, source, owner, status.", icon: "route" },
+  { title: "ai and automation", description: "Summaries, classification, and triggers.", icon: "cpu" },
+  { title: "qa and governance", description: "Accuracy, adherence, and standards.", icon: "shield" },
+  { title: "revenue intelligence", description: "Performance and market comparisons.", icon: "bar-chart" },
+  { title: "workforce", description: "Recruited, trained, deployed, and managed.", icon: "users" },
 ];
 
-const COMPOUNDING = ["Data quality", "Script performance", "Qualification accuracy", "Client response", "Routing", "market selection", "follow-up", "reporting"];
+const COMPOUNDING = ["Data quality", "Script performance", "Qualification accuracy", "Client response", "Routing", "Market selection", "Follow-up", "Reporting"];
 
 export default function RevenueInfrastructurePage() {
   return (
     <>
       <PageHero
         heading="outbound, built as infrastructure."
-        body="Most outbound functions are assembled from labor, software, data, vendors, and disconnected workflows. Omnikom combines them into one managed operating layer."
+        body="Most outbound functions are assembled from labor, software, data, and disconnected workflows. Omnikom combines them into one managed operating layer."
         primaryCta={{ label: "Book an Infrastructure Consultation", href: "/consultation" }}
+        accentIcons={["target", "database", "signal", "shield-check", "route", "cpu", "shield", "bar-chart", "users"]}
       />
 
       <section className="border-b border-border bg-ink">
-        <div className="container-page py-24">
+        <div className="container-page py-20 md:py-24">
           <SectionHeading className="max-w-2xl lowercase">
             the problem is not one missing tool.
           </SectionHeading>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-gray-300">
-            A company can have a CRM, a dialer, a data provider, callers,
-            scripts, and managers—and still have no reliable acquisition
-            system. The real problem is the absence of infrastructure
-            connecting every component.
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-gray-300">
+            A company can have a CRM, a dialer, callers, and managers — and
+            still have no reliable acquisition system.
           </p>
           <ul className="mt-10 grid gap-3 sm:grid-cols-2">
             {FRAGMENTS.map((item) => (
-              <li key={item} className="rounded-[12px] border border-border bg-ink-card px-5 py-4 text-sm text-gray-300">
+              <li key={item} className="flex items-center gap-3 rounded-[12px] border border-border bg-ink-card px-5 py-4 text-sm text-gray-300">
+                <Icon name="x" className="h-4 w-4 shrink-0 text-gray-600" />
                 {item}
               </li>
             ))}
@@ -80,7 +82,7 @@ export default function RevenueInfrastructurePage() {
       </section>
 
       <section className="border-b border-border bg-blue">
-        <div className="container-page py-24">
+        <div className="container-page py-20 md:py-24">
           <SectionHeading className="max-w-2xl lowercase">
             one operating system from market to opportunity.
           </SectionHeading>
@@ -96,33 +98,45 @@ export default function RevenueInfrastructurePage() {
       </section>
 
       <section className="border-b border-border bg-ink">
-        <div className="container-page py-24">
+        <div className="container-page py-20 md:py-24">
           <SectionHeading className="max-w-2xl lowercase">
             the nine layers of the platform.
           </SectionHeading>
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {COMPONENTS.map((c, index) => (
+            {COMPONENTS.map((c) => (
               <CapabilityCard
                 key={c.title}
-                index={String(index + 1).padStart(2, "0")}
                 title={c.title}
                 description={c.description}
+                icon={c.icon}
               />
             ))}
           </div>
         </div>
       </section>
 
+      <section className="border-b border-border bg-lime">
+        <div className="container-page flex flex-col items-start justify-between gap-6 py-10 text-ink md:flex-row md:items-center">
+          <p className="text-xl font-semibold lowercase md:max-w-xl">
+            see this mapped against your own market and data.
+          </p>
+          <Button
+            label="Book a Revenue Infrastructure Consultation"
+            href="/consultation"
+            style="secondary"
+            className="!border-ink !text-ink shrink-0 hover:!bg-ink hover:!text-lime"
+          />
+        </div>
+      </section>
+
       <section className="border-b border-border bg-ink">
-        <div className="container-page py-24">
+        <div className="container-page py-20 md:py-24">
           <SectionHeading className="max-w-2xl lowercase">
             campaigns restart. infrastructure compounds.
           </SectionHeading>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-gray-300">
-            Every operating cycle can improve data quality, script
-            performance, qualification accuracy, client response, routing,
-            market selection, follow-up, and reporting. The system becomes
-            more informed over time.
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-gray-300">
+            Every operating cycle improves the system — it gets more informed
+            over time.
           </p>
           <ul className="mt-8 flex flex-wrap gap-3">
             {COMPOUNDING.map((item) => (

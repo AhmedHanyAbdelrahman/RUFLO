@@ -16,6 +16,7 @@ export default function ConsultationPage() {
       <PageHero
         heading="design the infrastructure around your business."
         body="This is not a generic pricing call. It is a working session to understand your customer economics, market, current acquisition process, sales capacity, data, CRM, and growth objective."
+        accentIcons={["target", "database", "shield-check", "route", "bar-chart", "cpu"]}
       />
       <section className="bg-ink">
         <div className="container-page max-w-3xl py-24">

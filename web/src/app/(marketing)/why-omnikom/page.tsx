@@ -38,6 +38,8 @@ export default function WhyOmnikomPage() {
       <PageHero
         heading="the difference is the system."
         body="Omnikom does not sell one disconnected component. It operates the complete lane."
+        primaryCta={{ label: "See Whether Omnikom Fits", href: "/consultation" }}
+        accentIcons={["x", "shield", "database", "route", "check", "cpu", "bar-chart", "expand", "shield-check"]}
       />
 
       <section className="border-b border-border bg-ink">

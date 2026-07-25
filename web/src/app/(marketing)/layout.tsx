@@ -1,5 +1,6 @@
 import { SiteHeader } from "@/components/global/SiteHeader";
 import { SiteFooter } from "@/components/global/SiteFooter";
+import { StickyMobileCTA } from "@/components/global/StickyMobileCTA";
 
 export default function MarketingLayout({
   children,
@@ -15,10 +16,11 @@ export default function MarketingLayout({
         Skip to content
       </a>
       <SiteHeader />
-      <main id="main-content" className="flex-1">
+      <main id="main-content" className="flex-1 pb-20 lg:pb-0">
         {children}
       </main>
       <SiteFooter />
+      <StickyMobileCTA />
     </>
   );
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo/metadata";
 import { Button } from "@/components/ui/Button";
+import { Icon, type IconName } from "@/components/ui/Icon";
 import { SectionEyebrow } from "@/components/content/SectionEyebrow";
 import { SectionHeading } from "@/components/content/SectionHeading";
 import { PullQuote } from "@/components/content/PullQuote";
@@ -8,6 +9,7 @@ import { CapabilityCard } from "@/components/content/CapabilityCard";
 import { RevenueLaneCard } from "@/components/content/RevenueLaneCard";
 import { IndustryCard } from "@/components/content/IndustryCard";
 import { OwnershipSplit } from "@/components/content/OwnershipSplit";
+import { StatStrip } from "@/components/content/StatStrip";
 import { RevenueLoopDiagram } from "@/components/diagrams/RevenueLoopDiagram";
 import { PrimaryCTASection } from "@/components/conversion/PrimaryCTASection";
 
@@ -18,145 +20,155 @@ export const metadata: Metadata = pageMetadata({
   path: "/",
 });
 
-const CAPABILITIES = [
-  { title: "market strategy", description: "Define the market, ICP, commercial objective, qualification standard, and lane economics." },
-  { title: "data infrastructure", description: "Source, enrich, clean, segment, and maintain the data powering the lane." },
-  { title: "outreach operations", description: "Operate approved calling, response, reactivation, and follow-up workflows." },
-  { title: "qualification", description: "Capture fit, need, intent, authority, timeline, context, and the agreed next action." },
-  { title: "crm and routing", description: "Deliver every opportunity with structured notes, source, owner, status, and next step." },
-  { title: "ai and automation", description: "Generate summaries, classifications, alerts, workflow triggers, and recommendations." },
-  { title: "quality and governance", description: "Monitor accuracy, adherence, attendance, continuity, and operating standards." },
-  { title: "revenue intelligence", description: "Measure performance, compare markets, capture outcomes, and optimize the lane." },
+const HERO_STATS = [
+  { value: "9", label: "Operating layers" },
+  { value: "13", label: "Industries served" },
+  { value: "4", label: "Lane maturity stages" },
+  { value: "1", label: "Accountable system" },
 ];
 
-const SOLUTIONS = [
-  { title: "acquire", description: "Create new qualified opportunities from target markets.", href: "/solutions/acquire" },
-  { title: "reactivate", description: "Recover value from dormant customers, past leads, old estimates, and inactive accounts.", href: "/solutions/reactivate" },
-  { title: "qualify and route", description: "Turn conversations into structured opportunities delivered to the correct team.", href: "/solutions/qualify-route" },
-  { title: "improve speed-to-lead", description: "Respond to inbound demand before commercial intent disappears.", href: "/solutions/speed-to-lead" },
-  { title: "nurture and recover", description: "Manage callbacks, no-shows, future-timeline prospects, and incomplete opportunities.", href: "/solutions/nurture-recovery" },
-  { title: "operate departments", description: "Deploy complete revenue, customer-support, onboarding, or back-office functions.", href: "/solutions/managed-departments" },
+const CAPABILITIES: { title: string; description: string; icon: IconName }[] = [
+  { title: "market strategy", description: "ICP, objective, and lane economics.", icon: "target" },
+  { title: "data infrastructure", description: "Sourced, enriched, and segmented.", icon: "database" },
+  { title: "outreach operations", description: "Calling, response, and reactivation.", icon: "signal" },
+  { title: "qualification", description: "Fit, intent, authority, timeline.", icon: "shield-check" },
+  { title: "crm and routing", description: "Delivered with source and owner.", icon: "route" },
+  { title: "ai and automation", description: "Summaries, alerts, and triggers.", icon: "cpu" },
+  { title: "quality and governance", description: "Accuracy and operating standards.", icon: "shield" },
+  { title: "revenue intelligence", description: "Performance and market comparisons.", icon: "bar-chart" },
 ];
 
-const REVENUE_LANES = [
-  { stage: "stage 1", name: "validate", objective: "Test one market, ICP, service, or commercial thesis with controlled infrastructure.", href: "/revenue-lanes/validation" },
-  { stage: "stage 2", name: "grow", objective: "Create consistent weekly opportunity flow around a proven offer.", href: "/revenue-lanes/growth" },
-  { stage: "stage 3", name: "expand", objective: "Add markets, locations, ICPs, service lines, and reactivation workflows.", href: "/revenue-lanes/expansion" },
-  { stage: "stage 4", name: "enterprise", objective: "Operate governed, multi-lane infrastructure across teams, territories, or portfolio companies.", href: "/revenue-lanes/enterprise" },
+const SOLUTIONS: { title: string; description: string; href: string; icon: IconName }[] = [
+  { title: "acquire", description: "New qualified opportunities from target markets.", href: "/solutions/acquire", icon: "target" },
+  { title: "reactivate", description: "Recover value from dormant customers and past leads.", href: "/solutions/reactivate", icon: "refresh" },
+  { title: "qualify and route", description: "Structured opportunities delivered to the right team.", href: "/solutions/qualify-route", icon: "filter" },
+  { title: "speed-to-lead", description: "Respond while commercial intent is still active.", href: "/solutions/speed-to-lead", icon: "zap" },
+  { title: "nurture and recover", description: "Callbacks, no-shows, and future-timeline follow-up.", href: "/solutions/nurture-recovery", icon: "heart" },
+  { title: "operate departments", description: "Complete revenue, support, or back-office functions.", href: "/solutions/managed-departments", icon: "building" },
 ];
 
-const INDUSTRIES = [
-  { name: "real estate", problem: "Seller acquisition, listing opportunities, investor pipelines, and property-owner outreach.", href: "/industries/real-estate" },
-  { name: "home services", problem: "Inspections, estimates, replacements, maintenance, and past-opportunity reactivation.", href: "/industries/roofing-home-services" },
-  { name: "automotive", problem: "Declined-service recovery, inactive customer reactivation, fleet outreach, and multi-location service growth.", href: "/industries/automotive" },
-  { name: "b2b and saas", problem: "Decision-maker outreach, account-based campaigns, pipeline development, and market entry.", href: "/industries/b2b-saas" },
-  { name: "staffing", problem: "Employer acquisition, job-order creation, dormant account reactivation, and vertical expansion.", href: "/industries/staffing" },
-  { name: "healthcare and dental", problem: "Patient reactivation, treatment-plan recovery, consultation coordination, and no-show recovery.", href: "/industries/dental-healthcare" },
-  { name: "legal", problem: "Approved consultation, intake, and past-inquiry workflows within defined compliance boundaries.", href: "/industries/legal" },
-  { name: "financial services", problem: "Policy reviews, renewals, client onboarding, document collection, and managed workforce infrastructure.", href: "/industries/financial-services" },
-  { name: "education", problem: "Enrollment consultation, inquiry reactivation, event follow-up, and student retention.", href: "/industries/education" },
-  { name: "commercial services", problem: "Decision-maker meetings, contract opportunities, facility outreach, and project pipelines.", href: "/industries/commercial-industrial" },
+const REVENUE_LANES: { stage: string; name: string; objective: string; href: string; icon: IconName }[] = [
+  { stage: "stage 1", name: "validate", objective: "Test one market or thesis with controlled infrastructure.", href: "/revenue-lanes/validation", icon: "target" },
+  { stage: "stage 2", name: "grow", objective: "Consistent weekly opportunity flow around a proven offer.", href: "/revenue-lanes/growth", icon: "bar-chart" },
+  { stage: "stage 3", name: "expand", objective: "Add markets, locations, ICPs, and service lines.", href: "/revenue-lanes/expansion", icon: "expand" },
+  { stage: "stage 4", name: "enterprise", objective: "Governed, multi-lane infrastructure across the organization.", href: "/revenue-lanes/enterprise", icon: "building" },
+];
+
+const INDUSTRIES: { name: string; problem: string; href: string; icon: IconName }[] = [
+  { name: "real estate", problem: "Seller acquisition and investor pipelines.", href: "/industries/real-estate", icon: "building" },
+  { name: "home services", problem: "Inspections, estimates, and reactivation.", href: "/industries/roofing-home-services", icon: "layers" },
+  { name: "automotive", problem: "Declined-service recovery and fleet outreach.", href: "/industries/automotive", icon: "zap" },
+  { name: "b2b and saas", problem: "Decision-maker meetings and account outreach.", href: "/industries/b2b-saas", icon: "cpu" },
+  { name: "staffing", problem: "Employer acquisition and job orders.", href: "/industries/staffing", icon: "users" },
+  { name: "healthcare and dental", problem: "Patient reactivation and consultations.", href: "/industries/dental-healthcare", icon: "heart" },
+  { name: "legal", problem: "Consultation and intake, compliance-bound.", href: "/industries/legal", icon: "shield-check" },
+  { name: "financial services", problem: "Policy reviews and managed operations.", href: "/industries/financial-services", icon: "bar-chart" },
+  { name: "education", problem: "Enrollment consultation and reactivation.", href: "/industries/education", icon: "globe" },
+  { name: "commercial services", problem: "Decision-maker meetings and projects.", href: "/industries/commercial-industrial", icon: "route" },
 ];
 
 const PROCESS_STEPS = ["Assess", "Architect", "Build", "Launch", "Calibrate", "Operate", "Expand"];
 
-const TECHNOLOGY_CARDS = [
-  "AI conversation summaries",
-  "Qualification classification",
-  "CRM workflow automation",
-  "Opportunity routing",
-  "QA intelligence",
-  "Performance dashboards",
-  "Next-action recommendations",
-  "Source attribution",
+const TECHNOLOGY_CARDS: { label: string; icon: IconName }[] = [
+  { label: "AI conversation summaries", icon: "cpu" },
+  { label: "Qualification classification", icon: "shield-check" },
+  { label: "CRM workflow automation", icon: "route" },
+  { label: "Opportunity routing", icon: "target" },
+  { label: "QA intelligence", icon: "shield" },
+  { label: "Performance dashboards", icon: "bar-chart" },
+  { label: "Next-action recommendations", icon: "zap" },
+  { label: "Source attribution", icon: "database" },
 ];
 
-const PILLARS = [
-  { title: "accountable", description: "One operating partner owns the lane from data to qualified handoff." },
-  { title: "configurable", description: "Every lane is built around a specific market, ICP, workflow, and qualification standard." },
-  { title: "scalable", description: "Add markets, locations, service lines, business units, and departments without rebuilding the function." },
-  { title: "measurable", description: "Every opportunity includes source, activity, context, status, owner, and next action." },
+const PILLARS: { title: string; description: string; icon: IconName }[] = [
+  { title: "accountable", description: "One operating partner owns the lane end to end.", icon: "shield" },
+  { title: "configurable", description: "Built around your market, ICP, and workflow.", icon: "target" },
+  { title: "scalable", description: "Add markets and business units without rebuilding.", icon: "expand" },
+  { title: "measurable", description: "Every opportunity has source, status, and owner.", icon: "bar-chart" },
 ];
 
-const OUTCOME_CARDS = [
-  { title: "operational clarity", description: "One source of truth from market selection to opportunity handoff." },
-  { title: "repeatable execution", description: "A system that operates beyond individual hires or vendors." },
-  { title: "scalable capacity", description: "The ability to expand acquisition without rebuilding the function." },
+const OUTCOME_CARDS: { title: string; description: string; icon: IconName }[] = [
+  { title: "operational clarity", description: "One source of truth, market to handoff.", icon: "layers" },
+  { title: "repeatable execution", description: "A system beyond any single hire or vendor.", icon: "refresh" },
+  { title: "scalable capacity", description: "Expand acquisition without rebuilding the function.", icon: "expand" },
 ];
 
 export default function HomePage() {
   return (
     <>
-      {/* 5.3 Hero */}
+      {/* Hero */}
       <section className="border-b border-border bg-ink">
-        <div className="container-page flex min-h-[720px] flex-col justify-center gap-8 py-20 md:py-28">
-          <SectionEyebrow>revenue infrastructure</SectionEyebrow>
-          <SectionHeading as="h1" size="display" className="max-w-3xl lowercase">
-            build revenue. not headcount.
-          </SectionHeading>
-          <div className="max-w-xl space-y-4 text-lg leading-relaxed text-gray-300">
-            <p>
+        <div className="container-page grid gap-12 py-20 md:py-28 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+          <div className="flex flex-col gap-7">
+            <SectionEyebrow>revenue infrastructure</SectionEyebrow>
+            <SectionHeading as="h1" size="display" className="lowercase">
+              build revenue. not headcount.
+            </SectionHeading>
+            <p className="max-w-xl text-lg leading-relaxed text-gray-300">
               Omnikom designs, deploys, and operates the systems behind
-              outbound acquisition, customer reactivation, qualification,
-              routing, and revenue growth.
+              outbound acquisition, reactivation, qualification, and routing —
+              so you get predictable opportunity flow without rebuilding the
+              function internally.
             </p>
-            <p>
-              Create predictable qualified opportunity flow without
-              rebuilding the entire acquisition function internally.
+            <div className="flex flex-wrap items-center gap-4">
+              <Button label="Book a Revenue Infrastructure Consultation" href="/consultation" style="primary" />
+              <Button label="Explore the Platform" href="/platform" style="secondary" />
+            </div>
+            <div className="mt-4">
+              <StatStrip stats={HERO_STATS} />
+            </div>
+          </div>
+          <div className="flex flex-col gap-4 rounded-[20px] border border-border bg-ink-card p-6 lg:p-8">
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-gray-500">
+              the closed loop
+            </p>
+            <div className="overflow-x-auto">
+              <RevenueLoopDiagram />
+            </div>
+            <p className="text-sm text-gray-500">
+              One accountable system — from market to qualified opportunity,
+              and back.
             </p>
           </div>
-          <div className="flex flex-wrap items-center gap-4">
-            <Button label="Book a Revenue Infrastructure Consultation" href="/consultation" style="primary" />
-            <Button label="Explore the Platform" href="/platform" style="secondary" />
-          </div>
-          <p className="text-xs uppercase tracking-wide text-gray-500">
-            Strategy. Data. Outreach. Qualification. CRM. AI. Reporting. One operating system.
-          </p>
-          <div className="mt-6 overflow-x-auto">
-            <RevenueLoopDiagram />
-          </div>
-          <p className="max-w-xl text-sm text-gray-500">
-            Built for companies where one qualified opportunity can create
-            meaningful commercial value.
-          </p>
         </div>
       </section>
 
-      {/* 5.4 Category Shift */}
+      {/* Category Shift */}
       <section className="border-b border-border bg-blue">
-        <div className="container-page py-24">
+        <div className="container-page py-20 md:py-24">
           <SectionEyebrow>the category shift</SectionEyebrow>
           <SectionHeading className="max-w-2xl lowercase">
             outbound should not feel fragmented.
           </SectionHeading>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-gray-100">
-            Most companies assemble outbound growth from disconnected people,
-            software, data vendors, scripts, managers, and reporting systems.
-            Each piece creates another dependency. Omnikom replaces the
-            fragmented stack with one managed Revenue Infrastructure layer.
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-gray-100">
+            Omnikom replaces a stack of disconnected vendors, tools, and
+            managers with one managed Revenue Infrastructure layer.
           </p>
           <div className="mt-12 grid gap-4 md:grid-cols-3">
             <div className="rounded-[16px] border border-blue-bright bg-blue-bright/40 p-6">
+              <Icon name="x" className="mb-4 h-6 w-6 text-white/70" />
               <h3 className="mb-3 text-sm font-semibold uppercase tracking-wide text-white">
                 assembled outbound
               </h3>
               <ul className="space-y-2 text-sm text-gray-100">
-                {["Multiple vendors", "Separate tools", "Inconsistent quality", "Weak attribution", "High management load"].map((i) => (
+                {["Multiple vendors", "Separate tools", "Weak attribution", "High management load"].map((i) => (
                   <li key={i}>— {i}</li>
                 ))}
               </ul>
             </div>
             <div className="rounded-[16px] border border-blue-bright bg-blue-bright/40 p-6">
+              <Icon name="layers" className="mb-4 h-6 w-6 text-white/70" />
               <h3 className="mb-3 text-sm font-semibold uppercase tracking-wide text-white">
                 internal build
               </h3>
               <ul className="space-y-2 text-sm text-gray-100">
-                {["Recruiting", "Training", "Software", "Leadership", "Replacement", "QA", "Reporting"].map((i) => (
+                {["Recruiting", "Training", "Leadership", "QA and reporting"].map((i) => (
                   <li key={i}>— {i}</li>
                 ))}
               </ul>
             </div>
             <div className="rounded-[16px] border border-lime bg-lime p-6 text-ink">
+              <Icon name="check" className="mb-4 h-6 w-6" />
               <h3 className="mb-3 text-sm font-semibold uppercase tracking-wide">
                 omnikom infrastructure
               </h3>
@@ -167,27 +179,26 @@ export default function HomePage() {
               </ul>
             </div>
           </div>
-          <div className="mt-10">
+          <div className="mt-10 flex flex-wrap gap-4">
             <Button label="See How the Infrastructure Works" href="/revenue-infrastructure" style="secondary" className="!border-white !text-white hover:!bg-white hover:!text-ink" />
+            <Button label="Book a Consultation" href="/consultation" style="text" className="!text-white" />
           </div>
         </div>
       </section>
 
-      {/* 5.5 Revenue Infrastructure Definition */}
+      {/* Revenue Infrastructure Definition */}
       <section className="border-b border-border bg-ink">
-        <div className="container-page py-24">
+        <div className="container-page py-20 md:py-24">
           <SectionHeading className="max-w-2xl lowercase">
             from target market to qualified opportunity.
           </SectionHeading>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-gray-300">
-            Revenue Infrastructure is the complete operating layer behind
-            customer acquisition and reactivation. It connects market
-            strategy, data, outreach, qualification, CRM delivery, AI,
-            workforce, quality assurance, and reporting.
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-gray-300">
+            One operating layer connects strategy, data, outreach,
+            qualification, CRM, AI, workforce, and reporting.
           </p>
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {CAPABILITIES.map((c) => (
-              <CapabilityCard key={c.title} title={c.title} description={c.description} />
+              <CapabilityCard key={c.title} title={c.title} description={c.description} icon={c.icon} />
             ))}
           </div>
           <div className="mt-14">
@@ -196,32 +207,31 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5.6 Solutions */}
+      {/* Solutions */}
       <section className="border-b border-border bg-ink">
-        <div className="container-page py-24">
+        <div className="container-page py-20 md:py-24">
           <SectionEyebrow>business objectives</SectionEyebrow>
           <SectionHeading className="max-w-2xl lowercase">
             infrastructure built around the outcome you need.
           </SectionHeading>
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {SOLUTIONS.map((s) => (
-              <CapabilityCard key={s.href} title={s.title} description={s.description} href={s.href} />
+              <CapabilityCard key={s.href} title={s.title} description={s.description} href={s.href} icon={s.icon} />
             ))}
           </div>
         </div>
       </section>
 
-      {/* 5.7 Revenue Lanes */}
+      {/* Revenue Lanes */}
       <section className="border-b border-border bg-blue">
-        <div className="container-page py-24">
+        <div className="container-page py-20 md:py-24">
           <SectionEyebrow>deployment model</SectionEyebrow>
           <SectionHeading className="max-w-2xl lowercase">
             start with one lane. expand into infrastructure.
           </SectionHeading>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-gray-100">
-            Every Revenue Lane is designed around a clear commercial
-            objective, target audience, operating workflow, qualification
-            framework, and delivery destination.
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-gray-100">
+            Every Revenue Lane targets one objective, one audience, and one
+            qualification standard.
           </p>
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {REVENUE_LANES.map((lane) => (
@@ -229,8 +239,8 @@ export default function HomePage() {
             ))}
           </div>
           <p className="mt-10 max-w-xl text-sm text-gray-300">
-            Pricing is designed after the business model, market, complexity,
-            and required capacity are understood.
+            Pricing is designed after the business model and required
+            capacity are understood — no fixed public packages.
           </p>
           <div className="mt-6">
             <Button label="Explore Revenue Lanes" href="/revenue-lanes" style="secondary" className="!border-white !text-white hover:!bg-white hover:!text-ink" />
@@ -238,16 +248,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5.8 Industries */}
+      {/* Industries */}
       <section className="border-b border-border bg-ink">
-        <div className="container-page py-24">
+        <div className="container-page py-20 md:py-24">
           <SectionHeading className="max-w-2xl lowercase">
             one platform. configured for your industry.
           </SectionHeading>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-gray-300">
-            The infrastructure remains consistent. The data, language,
-            qualification, workflows, economics, and compliance controls
-            change by vertical.
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-gray-300">
+            The infrastructure stays consistent. The data, language, and
+            qualification change by vertical.
           </p>
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {INDUSTRIES.map((industry) => (
@@ -260,63 +269,72 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5.9 Operating System / process (lime) */}
-      <section className="border-b border-border bg-lime text-ink">
-        <div className="container-page py-24">
-          <SectionHeading className="max-w-2xl lowercase text-ink">
+      {/* Mid-page CTA banner */}
+      <section className="border-b border-border bg-lime">
+        <div className="container-page flex flex-col items-start justify-between gap-6 py-10 text-ink md:flex-row md:items-center">
+          <p className="text-xl font-semibold lowercase md:max-w-xl">
+            not sure which lane fits your business? we&rsquo;ll map it in one working session.
+          </p>
+          <Button
+            label="Book a Revenue Infrastructure Consultation"
+            href="/consultation"
+            style="secondary"
+            className="!border-ink !text-ink shrink-0 hover:!bg-ink hover:!text-lime"
+          />
+        </div>
+      </section>
+
+      {/* Operating System / process */}
+      <section className="border-b border-border bg-ink">
+        <div className="container-page py-20 md:py-24">
+          <SectionHeading className="max-w-2xl lowercase">
             always moving. always in control.
           </SectionHeading>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink/80">
-            Omnikom does not launch generic campaigns. Every engagement
-            begins with the client&rsquo;s economics, market, sales process,
-            operating capacity, and compliance boundaries.
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-gray-300">
+            Every engagement starts with your economics, market, and
+            compliance boundaries — not a generic campaign.
           </p>
           <ol className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-7">
             {PROCESS_STEPS.map((step, index) => (
               <li
                 key={step}
-                className="rounded-[14px] border border-ink/20 bg-ink p-4 text-center text-white"
+                className="rounded-[14px] border border-border bg-ink-card p-4 text-center transition-colors duration-150 hover:border-lime"
               >
                 <span className="block text-xs font-semibold text-lime">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <span className="mt-2 block text-sm font-semibold lowercase">
+                <span className="mt-2 block text-sm font-semibold lowercase text-white">
                   {step}
                 </span>
               </li>
             ))}
           </ol>
           <div className="mt-10">
-            <Button
-              label="View the Complete Process"
-              href="/how-it-works"
-              style="secondary"
-              className="!border-ink !text-ink hover:!bg-ink hover:!text-lime"
-            />
+            <Button label="View the Complete Process" href="/how-it-works" style="secondary" />
           </div>
         </div>
       </section>
 
-      {/* 5.10 Technology */}
+      {/* Technology */}
       <section className="border-b border-border bg-ink">
-        <div className="container-page py-24">
+        <div className="container-page py-20 md:py-24">
           <SectionHeading className="max-w-2xl lowercase">
             technology inside. operating outcomes outside.
           </SectionHeading>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-gray-300">
-            Omnikom&rsquo;s AI and automation capabilities are embedded
-            inside each lane to improve speed, consistency, routing,
-            visibility, and management. The technology is not presented as a
-            separate miracle product. It makes the infrastructure more
-            reliable.
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-gray-300">
+            AI and automation are embedded inside each lane to improve speed
+            and consistency — not sold as a separate product.
           </p>
           <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {TECHNOLOGY_CARDS.map((item) => (
               <div
-                key={item}
-                className="rounded-[14px] border border-border bg-ink-card p-5 text-sm font-medium text-white"
+                key={item.label}
+                className="flex items-center gap-3 rounded-[14px] border border-border bg-ink-card p-5 text-sm font-medium text-white"
               >
-                {item}
+                <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-[8px] bg-ink text-lime">
+                  <Icon name={item.icon} className="h-4 w-4" />
+                </span>
+                {item.label}
               </div>
             ))}
           </div>
@@ -326,36 +344,38 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5.11 Ownership Split */}
+      {/* Ownership Split */}
       <section className="border-b border-border bg-ink">
-        <div className="container-page py-24">
+        <div className="container-page py-20 md:py-24">
           <SectionHeading className="max-w-2xl lowercase">
             clear ownership creates better execution.
           </SectionHeading>
-          <div className="mt-12">
+          <div className="mt-10">
             <OwnershipSplit
-              omnikomOwns={["Lane strategy", "Data workflows", "Outreach operations", "Qualification", "CRM delivery", "Routing", "QA", "Reporting", "Managed follow-up", "Optimization"]}
-              clientOwns={["Offer", "Pricing", "Sales response", "Negotiation", "Regulated activity", "Contracts", "Closing", "Fulfillment", "Customer experience", "Outcome feedback"]}
+              omnikomOwns={["Lane strategy", "Data workflows", "Outreach operations", "Qualification", "CRM delivery", "Routing", "QA", "Reporting"]}
+              clientOwns={["Offer & pricing", "Sales response", "Negotiation", "Regulated activity", "Contracts", "Closing", "Fulfillment", "Outcome feedback"]}
             />
           </div>
-          <p className="mt-10 max-w-2xl text-base leading-relaxed text-gray-300">
-            Omnikom creates and manages qualified revenue opportunities. Your
-            team converts them into customers, transactions, contracts,
-            appointments, or accounts.
+          <p className="mt-8 max-w-2xl text-base leading-relaxed text-gray-300">
+            Omnikom creates and manages qualified opportunities. Your team
+            converts them into customers, contracts, or accounts.
           </p>
         </div>
       </section>
 
-      {/* 5.12 Why Omnikom */}
+      {/* Why Omnikom */}
       <section className="border-b border-border bg-blue">
-        <div className="container-page py-24">
+        <div className="container-page py-20 md:py-24">
           <SectionHeading className="max-w-2xl lowercase">
             built as infrastructure. managed as an operating system.
           </SectionHeading>
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {PILLARS.map((pillar) => (
               <div key={pillar.title} className="rounded-[16px] border border-blue-bright bg-blue-bright/30 p-6">
-                <h3 className="mb-3 text-lg font-semibold lowercase text-white">{pillar.title}</h3>
+                <span className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-[10px] bg-blue-bright text-lime">
+                  <Icon name={pillar.icon} className="h-5 w-5" />
+                </span>
+                <h3 className="mb-2 text-lg font-semibold lowercase text-white">{pillar.title}</h3>
                 <p className="text-sm leading-relaxed text-gray-100">{pillar.description}</p>
               </div>
             ))}
@@ -366,23 +386,23 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5.13 Results Philosophy */}
+      {/* Results Philosophy */}
       <section className="border-b border-border bg-ink">
-        <div className="container-page py-24">
+        <div className="container-page py-20 md:py-24">
           <SectionHeading className="max-w-2xl lowercase">
             we do not sell promises. we build the system behind performance.
           </SectionHeading>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-gray-300">
-            Omnikom does not guarantee closed revenue, signed contracts,
-            policies, cases, transactions, or commissions. We commit to the
-            operating standards we control: approved data workflows,
-            execution, qualification, CRM delivery, reporting, quality
-            assurance, recovery, and optimization.
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-gray-300">
+            Omnikom does not guarantee closed revenue or signed contracts. We
+            commit to the operating standards we control.
           </p>
           <div className="mt-12 grid gap-4 sm:grid-cols-3">
             {OUTCOME_CARDS.map((card) => (
               <div key={card.title} className="rounded-[16px] border border-border bg-ink-card p-6">
-                <h3 className="mb-3 text-lg font-semibold lowercase text-white">{card.title}</h3>
+                <span className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-[10px] bg-ink text-lime">
+                  <Icon name={card.icon} className="h-5 w-5" />
+                </span>
+                <h3 className="mb-2 text-lg font-semibold lowercase text-white">{card.title}</h3>
                 <p className="text-sm leading-relaxed text-gray-300">{card.description}</p>
               </div>
             ))}
@@ -390,27 +410,27 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5.14 Ideal Client */}
+      {/* Ideal Client */}
       <section className="border-b border-border bg-ink">
-        <div className="container-page py-24">
+        <div className="container-page py-20 md:py-24">
           <SectionHeading className="max-w-2xl lowercase">
             built for companies ready to operate growth seriously.
           </SectionHeading>
-          <div className="mt-12">
+          <div className="mt-10">
             <OwnershipSplit
               omnikomLabel="Strong Fit"
               clientLabel="Not a Fit"
-              omnikomOwns={["Proven offer", "Meaningful customer value", "Sales or service capacity", "CRM readiness", "Clear target market", "Need for predictable opportunity flow", "Willingness to provide outcome feedback", "Commitment to calibration"]}
-              clientOwns={["Unproven offer", "No response capacity", "No legal basis for outreach", "Expectation of guaranteed revenue", "Refusal to use CRM", "Need for the cheapest hourly labor only"]}
+              omnikomOwns={["Proven offer", "Meaningful customer value", "Sales capacity", "CRM readiness", "Clear target market", "Commitment to calibration"]}
+              clientOwns={["Unproven offer", "No response capacity", "No legal basis for outreach", "Expects guaranteed revenue", "Refuses CRM use", "Wants cheapest labor only"]}
             />
           </div>
         </div>
       </section>
 
-      {/* 5.15 Final CTA */}
+      {/* Final CTA */}
       <PrimaryCTASection
         heading="design the revenue infrastructure behind your next stage of growth."
-        body="Every company has different customer economics, markets, workflows, and operating constraints. Omnikom designs the lane around the business—not around a generic package."
+        body="Every company has different economics, markets, and constraints. Omnikom designs the lane around your business — not a generic package."
         primaryCta={{ label: "Book a Revenue Infrastructure Consultation", href: "/consultation" }}
         secondaryCta={{ label: "Download the Revenue Infrastructure Overview", href: "/resources" }}
         microcopy="No fixed public packages. Start with the business model."
