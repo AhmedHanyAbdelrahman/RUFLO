@@ -7,21 +7,29 @@ first for the business context, copy source, and design system rationale.
 
 ## Status
 
-Phase 1 (foundation) and part of Phase 3 (core pages) from the build guide
-are implemented:
+Phases 1-5 from the build guide are substantially implemented — every
+route in the sitemap (doc 02 §3) now resolves to a real page:
 
 - Design tokens, fonts (Sora/Inter), global styles matching the
-  "Sharp & Systematic" system
-- `SiteHeader` (mega menu + mobile menu), `SiteFooter`
+  "Sharp & Systematic" system — deliberately restrained (plain bordered
+  cards, numbered indices, minimal icon use) after an earlier pass
+  over-decorated it with icon tiles on every card
+- `SiteHeader` (mega menu + mobile menu), `SiteFooter`, `StickyMobileCTA`
 - Shared content/conversion components (cards, CTA sections, ownership
-  split, comparison table, revenue loop diagram)
-- Pages: Home, Revenue Infrastructure, How It Works, Why Omnikom,
-  Consultation (with a working Server Action + Zod validation)
+  split, comparison table, revenue loop diagram, stat strip)
+- Two reusable page templates — `SimpleInfraPage` (platform capability,
+  solution, and revenue lane detail pages) and `IndustryPageTemplate`
+  (all 13 industry pages) — so new pages stay visually consistent
+- Home, Revenue Infrastructure, Platform (+6 capability pages), Solutions
+  (+8), Revenue Lanes (+4), Industries (+13), How It Works, Why Omnikom,
+  Financial Services Infrastructure partnership page, About, Partnerships,
+  Careers, Contact, Case Studies (empty state), Insights, Resources
+  (+ FAQ library), Compliance, Consultation (working Server Action + Zod
+  validation), Privacy/Terms/Cookies (scaffolds flagged for legal review)
 
-Everything else in the sitemap (`Platform` capability pages, `Solutions`,
-`Revenue Lanes`, `Industries`, `About`, `Partnerships`, `Case Studies`,
-legal pages, etc.) still needs to be built following the same patterns —
-see the build guide's Phase 3-5 breakdown.
+Not yet built: `/careers` has no real job board/ATS integration, no CMS
+is wired up (see below), and the legal pages are scaffolds, not reviewed
+text.
 
 ## Development
 
