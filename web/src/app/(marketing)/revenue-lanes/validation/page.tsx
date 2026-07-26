@@ -36,6 +36,7 @@ export default function ValidationLanePage() {
       ]}
       ctaHeading="request a validation lane assessment."
       ctaLabel="Request a Validation Lane Assessment"
+      breadcrumbs={[{ label: "Home", href: "/" }, { label: "Revenue Lanes", href: "/revenue-lanes" }, { label: "Validation Lane", href: "/revenue-lanes/validation" }]}
     />
   );
 }

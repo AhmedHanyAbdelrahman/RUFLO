@@ -32,6 +32,7 @@ export default function EnterpriseLanePage() {
       ]}
       ctaHeading="discuss an enterprise deployment."
       ctaLabel="Discuss an Enterprise Deployment"
+      breadcrumbs={[{ label: "Home", href: "/" }, { label: "Revenue Lanes", href: "/revenue-lanes" }, { label: "Enterprise Infrastructure", href: "/revenue-lanes/enterprise" }]}
     />
   );
 }

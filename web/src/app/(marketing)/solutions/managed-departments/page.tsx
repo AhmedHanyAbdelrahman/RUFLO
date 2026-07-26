@@ -31,6 +31,7 @@ export default function ManagedDepartmentsPage() {
       ]}
       ctaHeading="design a managed department."
       ctaLabel="Design a Managed Department"
+      breadcrumbs={[{ label: "Home", href: "/" }, { label: "Solutions", href: "/solutions" }, { label: "Managed Departments", href: "/solutions/managed-departments" }]}
     />
   );
 }

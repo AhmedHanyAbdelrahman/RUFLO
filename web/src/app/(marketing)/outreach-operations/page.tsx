@@ -31,6 +31,7 @@ export default function OutreachOperationsPage() {
       ]}
       ctaHeading="explore managed outreach."
       ctaLabel="Explore Managed Outreach"
+      breadcrumbs={[{ label: "Home", href: "/" }, { label: "Platform", href: "/platform" }, { label: "Outreach Operations", href: "/outreach-operations" }]}
     />
   );
 }

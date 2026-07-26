@@ -30,6 +30,7 @@ export default function WhiteLabelPage() {
       ]}
       ctaHeading="discuss a white-label partnership."
       ctaLabel="Discuss a White-Label Partnership"
+      breadcrumbs={[{ label: "Home", href: "/" }, { label: "Solutions", href: "/solutions" }, { label: "White Label", href: "/solutions/white-label" }]}
     />
   );
 }

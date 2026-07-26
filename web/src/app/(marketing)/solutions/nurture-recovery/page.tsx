@@ -16,6 +16,7 @@ export default function NurtureRecoveryPage() {
       heroCta={{ label: "Build a Nurture Lane", href: "/consultation" }}
       ctaHeading="build a nurture lane."
       ctaLabel="Build a Nurture Lane"
+      breadcrumbs={[{ label: "Home", href: "/" }, { label: "Solutions", href: "/solutions" }, { label: "Nurture and Recovery", href: "/solutions/nurture-recovery" }]}
     />
   );
 }

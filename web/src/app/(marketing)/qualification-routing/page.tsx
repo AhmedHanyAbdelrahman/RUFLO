@@ -30,6 +30,7 @@ export default function QualificationRoutingPage() {
       ]}
       ctaHeading="design a qualification framework."
       ctaLabel="Design a Qualification Framework"
+      breadcrumbs={[{ label: "Home", href: "/" }, { label: "Platform", href: "/platform" }, { label: "Qualification and Routing", href: "/qualification-routing" }]}
     />
   );
 }

@@ -16,6 +16,7 @@ export default function QualifyRoutePage() {
       heroCta={{ label: "Design My Qualification and Routing System", href: "/consultation" }}
       ctaHeading="design my qualification and routing system."
       ctaLabel="Design My Qualification and Routing System"
+      breadcrumbs={[{ label: "Home", href: "/" }, { label: "Solutions", href: "/solutions" }, { label: "Qualify and Route", href: "/solutions/qualify-route" }]}
     />
   );
 }

@@ -30,6 +30,7 @@ export default function DataInfrastructurePage() {
       ]}
       ctaHeading="build a data-powered revenue lane."
       ctaLabel="Build a Data-Powered Revenue Lane"
+      breadcrumbs={[{ label: "Home", href: "/" }, { label: "Platform", href: "/platform" }, { label: "Data Infrastructure", href: "/data-infrastructure" }]}
     />
   );
 }

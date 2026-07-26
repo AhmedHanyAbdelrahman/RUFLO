@@ -23,6 +23,7 @@ export default function GrowthLanePage() {
       ]}
       ctaHeading="design a growth lane."
       ctaLabel="Design a Growth Lane"
+      breadcrumbs={[{ label: "Home", href: "/" }, { label: "Revenue Lanes", href: "/revenue-lanes" }, { label: "Growth Lane", href: "/revenue-lanes/growth" }]}
     />
   );
 }

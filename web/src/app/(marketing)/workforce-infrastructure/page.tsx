@@ -32,6 +32,7 @@ export default function WorkforceInfrastructurePage() {
       ]}
       ctaHeading="build managed operating capacity."
       ctaLabel="Build Managed Operating Capacity"
+      breadcrumbs={[{ label: "Home", href: "/" }, { label: "Platform", href: "/platform" }, { label: "Workforce Infrastructure", href: "/workforce-infrastructure" }]}
     />
   );
 }

@@ -26,6 +26,7 @@ export default function AcquirePage() {
       ]}
       ctaHeading="build an acquisition lane."
       ctaLabel="Build an Acquisition Lane"
+      breadcrumbs={[{ label: "Home", href: "/" }, { label: "Solutions", href: "/solutions" }, { label: "Acquire", href: "/solutions/acquire" }]}
     />
   );
 }

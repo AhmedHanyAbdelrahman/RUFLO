@@ -29,6 +29,7 @@ export default function ReactivatePage() {
       ]}
       ctaHeading="assess my reactivation opportunity."
       ctaLabel="Assess My Reactivation Opportunity"
+      breadcrumbs={[{ label: "Home", href: "/" }, { label: "Solutions", href: "/solutions" }, { label: "Reactivate", href: "/solutions/reactivate" }]}
     />
   );
 }

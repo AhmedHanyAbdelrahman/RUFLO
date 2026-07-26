@@ -16,6 +16,7 @@ export default function SpeedToLeadPage() {
       heroCta={{ label: "Improve My Speed-to-Lead", href: "/consultation" }}
       ctaHeading="improve my speed-to-lead."
       ctaLabel="Improve My Speed-to-Lead"
+      breadcrumbs={[{ label: "Home", href: "/" }, { label: "Solutions", href: "/solutions" }, { label: "Speed-to-Lead", href: "/solutions/speed-to-lead" }]}
     />
   );
 }

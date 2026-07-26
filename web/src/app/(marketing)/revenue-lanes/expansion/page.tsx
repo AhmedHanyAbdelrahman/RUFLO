@@ -17,6 +17,7 @@ export default function ExpansionLanePage() {
       heroCta={{ label: "Plan My Expansion Infrastructure", href: "/consultation" }}
       ctaHeading="plan my expansion infrastructure."
       ctaLabel="Plan My Expansion Infrastructure"
+      breadcrumbs={[{ label: "Home", href: "/" }, { label: "Revenue Lanes", href: "/revenue-lanes" }, { label: "Expansion Infrastructure", href: "/revenue-lanes/expansion" }]}
     />
   );
 }

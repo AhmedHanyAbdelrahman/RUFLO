@@ -32,6 +32,7 @@ export default function RevenueIntelligencePage() {
       ]}
       ctaHeading="see the revenue intelligence model."
       ctaLabel="See the Revenue Intelligence Model"
+      breadcrumbs={[{ label: "Home", href: "/" }, { label: "Platform", href: "/platform" }, { label: "Revenue Intelligence", href: "/revenue-intelligence" }]}
     />
   );
 }

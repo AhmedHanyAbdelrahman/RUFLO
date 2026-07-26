@@ -32,6 +32,7 @@ export default function AiAutomationPage() {
       boundary="AI supports the operating system. It does not replace accountability, client approval, licensed judgment, or human relationship-building."
       ctaHeading="explore ai-enabled operations."
       ctaLabel="Explore AI-Enabled Operations"
+      breadcrumbs={[{ label: "Home", href: "/" }, { label: "Platform", href: "/platform" }, { label: "AI and Automation", href: "/ai-automation" }]}
     />
   );
 }

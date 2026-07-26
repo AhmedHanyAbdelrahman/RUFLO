@@ -16,6 +16,7 @@ export default function MultiMarketExpansionPage() {
       heroCta={{ label: "Plan a Multi-Market Deployment", href: "/consultation" }}
       ctaHeading="plan a multi-market deployment."
       ctaLabel="Plan a Multi-Market Deployment"
+      breadcrumbs={[{ label: "Home", href: "/" }, { label: "Solutions", href: "/solutions" }, { label: "Multi-Market Expansion", href: "/solutions/multi-market-expansion" }]}
     />
   );
 }
