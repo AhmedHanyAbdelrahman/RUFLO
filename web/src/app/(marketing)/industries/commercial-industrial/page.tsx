@@ -21,6 +21,8 @@ export default function CommercialIndustrialPage() {
         "Account Reactivation",
       ]}
       ctaLabel="Build a Commercial Opportunity Lane"
+      industryName="Commercial and Industrial Services"
+      slug="commercial-industrial"
     />
   );
 }

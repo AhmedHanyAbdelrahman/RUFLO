@@ -16,6 +16,8 @@ export default function SolarPage() {
       revenueLanes={["Residential Consultation", "Commercial Solar", "Battery Storage", "Past Lead Reactivation", "Market Expansion"]}
       boundary="Omnikom captures approved preliminary information and routes opportunities to appropriately licensed or authorized client personnel."
       ctaLabel="Build a Solar Acquisition Lane"
+      industryName="Solar"
+      slug="solar"
     />
   );
 }

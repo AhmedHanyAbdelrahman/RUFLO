@@ -15,6 +15,8 @@ export default function EducationPage() {
       heroBody="Omnikom builds managed enrollment and reactivation lanes for trade schools, coaching companies, bootcamps, and continuing-education providers."
       revenueLanes={["Enrollment Consultation", "Inquiry Reactivation", "Event Follow-Up", "Student Retention", "Program Launch"]}
       ctaLabel="Build an Enrollment Lane"
+      industryName="Education"
+      slug="education"
     />
   );
 }

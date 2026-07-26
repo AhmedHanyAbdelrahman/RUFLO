@@ -15,6 +15,8 @@ export default function StaffingPage() {
       heroBody="Omnikom builds and operates outbound lanes for general staffing, healthcare staffing, skilled trades, technology recruiting, and RPO providers."
       revenueLanes={["Employer Acquisition", "Job Orders", "Dormant Account Reactivation", "Vertical Expansion", "Territory Launch"]}
       ctaLabel="Build a Staffing Revenue Lane"
+      industryName="Staffing and Recruiting"
+      slug="staffing"
     />
   );
 }

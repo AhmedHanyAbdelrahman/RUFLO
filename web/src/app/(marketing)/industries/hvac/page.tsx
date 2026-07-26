@@ -22,6 +22,8 @@ export default function HvacPage() {
         "Multi-Location Growth",
       ]}
       ctaLabel="Build an HVAC Revenue Lane"
+      industryName="HVAC"
+      slug="hvac"
     />
   );
 }

@@ -23,6 +23,8 @@ export default function RoofingHomeServicesPage() {
       ]}
       qualifiedOpportunity="A property decision-maker in the approved service territory who has a relevant need and is open to an inspection, estimate, consultation, or service conversation."
       ctaLabel="Build a Roofing or Home Services Lane"
+      industryName="Roofing and Home Services"
+      slug="roofing-home-services"
     />
   );
 }

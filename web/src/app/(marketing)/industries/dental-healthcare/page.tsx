@@ -23,6 +23,8 @@ export default function DentalHealthcarePage() {
       ]}
       boundary="Omnikom does not diagnose, provide medical advice, or replace licensed clinical personnel."
       ctaLabel="Build a Patient Reactivation Lane"
+      industryName="Dental and Healthcare"
+      slug="dental-healthcare"
     />
   );
 }

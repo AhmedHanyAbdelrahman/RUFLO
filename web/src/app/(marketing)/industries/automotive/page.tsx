@@ -23,6 +23,8 @@ export default function AutomotivePage() {
       ]}
       qualifiedOpportunity="A customer or fleet decision-maker with a relevant vehicle or service need who is open to scheduling, receiving an estimate, or speaking with the service team."
       ctaLabel="Build an Automotive Revenue Lane"
+      industryName="Automotive"
+      slug="automotive"
     />
   );
 }

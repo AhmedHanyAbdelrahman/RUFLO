@@ -1,6 +1,7 @@
 import { PageHero } from "@/components/heroes/PageHero";
 import { SectionHeading } from "@/components/content/SectionHeading";
 import { PrimaryCTASection } from "@/components/conversion/PrimaryCTASection";
+import { Breadcrumbs, type BreadcrumbItem } from "@/components/navigation/Breadcrumbs";
 import type { CTA } from "@/types/cta";
 
 export interface ListSection {
@@ -18,6 +19,7 @@ export interface SimpleInfraPageProps {
   ctaHeading: string;
   ctaLabel: string;
   ctaHref?: string;
+  breadcrumbs?: BreadcrumbItem[];
 }
 
 export function SimpleInfraPage({
@@ -30,9 +32,11 @@ export function SimpleInfraPage({
   ctaHeading,
   ctaLabel,
   ctaHref = "/consultation",
+  breadcrumbs,
 }: SimpleInfraPageProps) {
   return (
     <>
+      {breadcrumbs ? <Breadcrumbs items={breadcrumbs} /> : null}
       <PageHero eyebrow={eyebrow} heading={heading} body={body} primaryCta={heroCta} />
 
       {listSections?.map((section, i) => (

@@ -15,6 +15,8 @@ export default function MedSpaPage() {
       heroBody="Omnikom builds managed reactivation and consultation lanes for med spas and aesthetics providers."
       revenueLanes={["Past Lead Reactivation", "Membership", "Consultation", "Treatment Follow-Up", "No-Show Recovery"]}
       ctaLabel="Build a Med Spa Revenue Lane"
+      industryName="Med Spa and Aesthetics"
+      slug="med-spa"
     />
   );
 }

@@ -2,6 +2,7 @@ import { PageHero } from "@/components/heroes/PageHero";
 import { SectionHeading } from "@/components/content/SectionHeading";
 import { OwnershipSplit } from "@/components/content/OwnershipSplit";
 import { PrimaryCTASection } from "@/components/conversion/PrimaryCTASection";
+import { Breadcrumbs } from "@/components/navigation/Breadcrumbs";
 
 export interface IndustryPageTemplateProps {
   eyebrow?: string;
@@ -15,6 +16,8 @@ export interface IndustryPageTemplateProps {
   boundary?: string;
   partnerLine?: string;
   ctaLabel: string;
+  industryName: string;
+  slug: string;
 }
 
 export function IndustryPageTemplate({
@@ -29,9 +32,18 @@ export function IndustryPageTemplate({
   boundary,
   partnerLine,
   ctaLabel,
+  industryName,
+  slug,
 }: IndustryPageTemplateProps) {
   return (
     <>
+      <Breadcrumbs
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Industries", href: "/industries" },
+          { label: industryName, href: `/industries/${slug}` },
+        ]}
+      />
       <PageHero
         eyebrow={eyebrow}
         heading={heading}

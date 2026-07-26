@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Sora } from "next/font/google";
+import { OrganizationStructuredData } from "@/lib/seo/structuredData";
+import { CookieBanner } from "@/components/global/CookieBanner";
 import "./globals.css";
 
 const bodyFont = Inter({
@@ -45,7 +47,9 @@ export default function RootLayout({
       className={`${bodyFont.variable} ${headingFont.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-ink text-white">
+        <OrganizationStructuredData />
         {children}
+        <CookieBanner />
       </body>
     </html>
   );

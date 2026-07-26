@@ -23,6 +23,8 @@ export default function B2bSaasPage() {
       ]}
       qualifiedOpportunity="A relevant stakeholder at a matching account with a documented problem, initiative, timing signal, and agreed next action."
       ctaLabel="Build a B2B Revenue Lane"
+      industryName="B2B and SaaS"
+      slug="b2b-saas"
     />
   );
 }

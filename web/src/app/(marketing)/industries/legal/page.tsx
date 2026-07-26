@@ -16,6 +16,8 @@ export default function LegalPage() {
       revenueLanes={["Consultation", "Intake Completion", "Past Inquiry Follow-Up", "Community Outreach", "B2B Referral Development"]}
       boundary="Omnikom does not provide legal advice, accept cases, or represent the law firm."
       ctaLabel="Build a Legal Intake Lane"
+      industryName="Legal"
+      slug="legal"
     />
   );
 }

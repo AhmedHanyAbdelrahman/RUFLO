@@ -27,6 +27,8 @@ export default function RealEstatePage() {
       omnikomOperates={["Market and list strategy", "Data and enrichment", "Outbound execution", "Qualification", "CRM delivery", "AI summaries", "Nurture", "Reporting"]}
       clientOwns={["Brokerage", "Offers", "Negotiation", "Contracts", "Disclosures", "Closing", "Licensed activity"]}
       ctaLabel="Build a Seller Acquisition Lane"
+      industryName="Real Estate and Property"
+      slug="real-estate"
     />
   );
 }

@@ -26,6 +26,8 @@ export default function FinancialServicesPage() {
       partnerLine="Financial-services deployments may be supported through Omnikom Financial Services Infrastructure, powered by Rainmaker Wealth Innovation."
       boundary="Regulated advice, product recommendations, fiduciary responsibility, binding, underwriting, lending decisions, and licensed solicitation remain with authorized client personnel."
       ctaLabel="Explore Financial Services Infrastructure"
+      industryName="Financial Services"
+      slug="financial-services"
     />
   );
 }
