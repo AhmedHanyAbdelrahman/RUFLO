@@ -17,15 +17,15 @@ const headingFont = Sora({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.omnikom.com"),
   title: {
-    default: "Omnikom | Revenue Infrastructure for High-Growth Companies",
+    default: "Omnikom | The Outbound Revenue Infrastructure Behind High-Growth Companies",
     template: "%s | Omnikom",
   },
   description:
-    "Omnikom designs, deploys, and operates revenue acquisition infrastructure across data, outreach, qualification, CRM routing, AI, workforce, and reporting.",
+    "Omnikom is the outbound revenue infrastructure behind high-growth companies — designing, deploying, and operating the systems behind data, outreach, qualification, CRM routing, AI, workforce, and reporting.",
   openGraph: {
-    title: "Omnikom | Revenue Infrastructure for High-Growth Companies",
+    title: "Omnikom | The Outbound Revenue Infrastructure Behind High-Growth Companies",
     description:
-      "Omnikom designs, deploys, and operates revenue acquisition infrastructure across data, outreach, qualification, CRM routing, AI, workforce, and reporting.",
+      "Omnikom is the outbound revenue infrastructure behind high-growth companies — designing, deploying, and operating the systems behind data, outreach, qualification, CRM routing, AI, workforce, and reporting.",
     siteName: "Omnikom",
     type: "website",
   },

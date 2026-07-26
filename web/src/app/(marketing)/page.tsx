@@ -13,9 +13,9 @@ import { RevenueLoopDiagram } from "@/components/diagrams/RevenueLoopDiagram";
 import { PrimaryCTASection } from "@/components/conversion/PrimaryCTASection";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Omnikom | Revenue Infrastructure for High-Growth Companies",
+  title: "Omnikom | The Outbound Revenue Infrastructure Behind High-Growth Companies",
   description:
-    "Omnikom designs, deploys, and operates revenue acquisition infrastructure across data, outreach, qualification, CRM routing, AI, workforce, and reporting.",
+    "Omnikom is the outbound revenue infrastructure behind high-growth companies — designing, deploying, and operating the systems behind data, outreach, qualification, CRM routing, AI, workforce, and reporting.",
   path: "/",
 });
 
@@ -99,10 +99,14 @@ export default function HomePage() {
       <section className="border-b border-border bg-ink">
         <div className="container-page grid gap-12 py-20 md:py-28 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div className="flex flex-col gap-7">
-            <SectionEyebrow>revenue infrastructure</SectionEyebrow>
+            <SectionEyebrow>outbound revenue infrastructure</SectionEyebrow>
             <SectionHeading as="h1" size="display" className="lowercase">
               build revenue. not headcount.
             </SectionHeading>
+            <p className="max-w-xl text-xl font-semibold leading-relaxed text-white">
+              The outbound revenue infrastructure behind high-growth
+              companies.
+            </p>
             <p className="max-w-xl text-lg leading-relaxed text-gray-300">
               Omnikom designs, deploys, and operates the systems behind
               outbound acquisition, reactivation, qualification, and routing —
